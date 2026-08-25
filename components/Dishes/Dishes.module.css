@@ -1,0 +1,16 @@
+.dishes{ background:var(--plum); padding:150px 0; }
+
+.container{ max-width:1180px; margin:0 auto; padding:0 32px; }
+
+.head{ max-width:640px; margin-bottom:64px; }
+
+.head h2{ font-size:clamp(2.1rem, 4vw, 3.4rem); margin:0; }
+
+.head p{
+  margin-top:18px;
+  color:var(--parchment-dim);
+  font-size:1.02rem;
+  line-height:1.6;
+  font-weight:300;
+  max-width:520px;
+}

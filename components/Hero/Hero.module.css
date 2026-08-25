@@ -1,0 +1,192 @@
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  padding:150px 0 60px;
+  background:radial-gradient(120% 90% at 78% 18%, var(--plum-light) 0%, var(--plum) 42%, var(--ink) 78%);
+}
+
+.bg{
+  position:absolute;
+  inset:-10%;
+  background:
+    radial-gradient(38% 32% at 82% 20%, rgba(227,164,41,0.20), transparent 70%),
+    radial-gradient(30% 26% at 10% 82%, rgba(184,67,30,0.22), transparent 70%);
+}
+
+/* Faint decorative mark, kept low-key so it doesn't compete with the
+   photo collage — sits behind everything, upper-left. */
+.nazcaHero{
+  position:absolute;
+  left:-10%;
+  top:6%;
+  width:min(40vw, 520px);
+  opacity:0.16;
+  color:var(--gold-soft);
+  pointer-events:none;
+  z-index:0;
+}
+
+.layout{
+  position:relative;
+  z-index:2;
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 32px;
+  width:100%;
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:56px;
+  align-items:center;
+}
+
+.content{ min-width:0; }
+
+.title{
+  font-family:var(--font-display), serif;
+  font-weight:600;
+  line-height:1.05;
+  font-size:clamp(3rem, 6.4vw, 6.2rem);
+  letter-spacing:-0.01em;
+  color:var(--parchment);
+  margin:0;
+}
+
+.subtitle{
+  max-width:460px;
+  margin-top:22px;
+  font-size:1.08rem;
+  line-height:1.55;
+  color:var(--parchment-dim);
+  font-weight:300;
+}
+
+/* Wrapper for the scroll cues — this is what gives them breathing room
+   instead of sitting flush against each other. */
+.cues{
+  margin-top:52px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:16px 28px;
+}
+
+.scrollCue{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:var(--font-mono), monospace;
+  font-size:0.78rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--gold-soft);
+}
+
+.scrollCue span{
+  display:inline-block;
+  animation:bob 1.8s ease-in-out infinite;
+}
+
+/* ---------- Image collage ---------- */
+/* 
+.collageWrap{
+  position:relative;
+  width:100%;
+  height:70vh;
+  max-height:620px;
+  min-height:360px;
+}
+
+.collage{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  grid-template-rows:repeat(4, 1fr);
+  gap:14px;
+  height:100%;
+  width:100%;
+}
+
+.collage[data-count='5']{
+  grid-template-columns:repeat(6, 1fr);
+  grid-template-rows:repeat(6, 1fr);
+}
+
+.image{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  background:linear-gradient(155deg, var(--plum-light), var(--plum) 60%, var(--ink));
+}
+
+.image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* 1 image — fills the whole area */
+/* .collage[data-count='1'] .image:nth-child(1){ grid-column:1 / 5; grid-row:1 / 5; } */
+
+/* 2 images — stacked top/bottom */
+/* .collage[data-count='2'] .image:nth-child(1){ grid-column:1 / 5; grid-row:1 / 3; }
+.collage[data-count='2'] .image:nth-child(2){ grid-column:1 / 5; grid-row:3 / 5; } */
+
+/* 3 images — tall left, two stacked right */
+/* .collage[data-count='3'] .image:nth-child(1){ grid-column:1 / 3; grid-row:1 / 5; }
+.collage[data-count='3'] .image:nth-child(2){ grid-column:3 / 5; grid-row:1 / 3; }
+.collage[data-count='3'] .image:nth-child(3){ grid-column:3 / 5; grid-row:3 / 5; } */
+
+/* 4 images — even 2x2 */
+/* .collage[data-count='4'] .image:nth-child(1){ grid-column:1 / 3; grid-row:1 / 3; }
+.collage[data-count='4'] .image:nth-child(2){ grid-column:3 / 5; grid-row:1 / 3; }
+.collage[data-count='4'] .image:nth-child(3){ grid-column:1 / 3; grid-row:3 / 5; }
+.collage[data-count='4'] .image:nth-child(4){ grid-column:3 / 5; grid-row:3 / 5; } */
+
+/* 5 images — one large anchor + four smaller around it (6x6 grid) */
+/* .collage[data-count='5'] .image:nth-child(1){ grid-column:1 / 5; grid-row:1 / 5; }
+.collage[data-count='5'] .image:nth-child(2){ grid-column:5 / 7; grid-row:1 / 4; }
+.collage[data-count='5'] .image:nth-child(3){ grid-column:5 / 7; grid-row:4 / 7; }
+.collage[data-count='5'] .image:nth-child(4){ grid-column:1 / 3; grid-row:5 / 7; }
+.collage[data-count='5'] .image:nth-child(5){ grid-column:3 / 5; grid-row:5 / 7; } */
+
+/* @media (max-width:64em){
+  .layout{
+    grid-template-columns:1fr;
+  }
+  .collageWrap{
+    order:2;
+    height:52vh;
+    max-height:460px;
+    margin-top:8px;
+  }
+  .content{ order:1; }
+}
+
+@media (max-width:36em){
+  .collageWrap{ height:auto; aspect-ratio:4 / 5; min-height:0; }
+} 
+*/
+
+/* ---------- Orbit slider wrapper ---------- */
+
+.orbitParallax{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+}
+
+@media (max-width:64em){
+  .layout{
+    grid-template-columns:1fr;
+  }
+  .orbitParallax{
+    order:2;
+    margin-top:24px;
+  }
+  .content{ order:1; }
+}

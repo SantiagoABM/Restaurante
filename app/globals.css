@@ -1,0 +1,46 @@
+:root{
+  --ink:#180F26;
+  --plum:#2C1B49;
+  --plum-light:#3C2660;
+  --gold:#E3A429;
+  --gold-soft:#F1C876;
+  --clay:#B8431E;
+  --parchment:#F3E7CE;
+  --parchment-dim:#C9BBA0;
+  --line: rgba(243,231,206,0.14);
+  --ease: cubic-bezier(.22,1,.36,1);
+}
+
+*{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  background:var(--ink);
+  color:var(--parchment);
+  font-family:var(--font-body), sans-serif;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+::selection{ background:var(--gold); color:var(--ink); }
+
+a{ color:inherit; text-decoration:none; }
+
+img, svg{ display:block; max-width:100%; }
+
+:focus-visible{ outline:2px solid var(--gold); outline-offset:4px; }
+
+.eyebrow{
+  font-family:var(--font-mono), monospace;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  font-size:0.72rem;
+  color:var(--gold);
+  display:inline-block;
+  margin-bottom:18px;
+}
+
+.reveal{ opacity:0; }
+
+@keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(6px); } }

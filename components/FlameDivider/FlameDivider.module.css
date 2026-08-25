@@ -1,0 +1,42 @@
+.divider{
+  position:relative;
+  background:var(--ink);
+  padding:180px 0 160px;
+  text-align:center;
+  overflow:hidden;
+}
+
+.glow{
+  position:absolute;
+  left:50%;
+  bottom:-10%;
+  width:70%;
+  height:60%;
+  transform:translateX(-50%);
+  background:radial-gradient(50% 50% at 50% 100%, rgba(227,164,41,0.22), transparent 72%);
+  pointer-events:none;
+}
+
+.container{ position:relative; max-width:1180px; margin:0 auto; padding:0 32px; }
+
+.flameWrap{
+  max-width:640px;
+  margin:0 auto 44px;
+}
+
+.flame{
+  transform-box:fill-box;
+  transform-origin:50% 100%;
+}
+
+.quote{
+  font-family:var(--font-display), serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(1.4rem, 2.8vw, 2.1rem);
+  max-width:700px;
+  margin:0 auto;
+  color:var(--parchment);
+}
+
+.quote span{ color:var(--gold-soft); }

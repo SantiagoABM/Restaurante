@@ -1,0 +1,41 @@
+.fab{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:150;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:var(--gold);
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 26px rgba(0,0,0,0.4);
+  transition:transform .25s var(--ease);
+}
+
+.fab:hover{ transform:translateY(-3px); }
+.fab:active{ transform:translateY(0); }
+
+.badge{
+  position:absolute;
+  top:-4px;
+  right:-4px;
+  min-width:22px;
+  height:22px;
+  padding:0 5px;
+  border-radius:999px;
+  background:var(--clay);
+  color:var(--parchment);
+  font-family:var(--font-mono), monospace;
+  font-size:0.72rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid var(--ink);
+}
+
+@media (max-width:48em){
+  .fab{ right:16px; bottom:16px; width:52px; height:52px; }
+}

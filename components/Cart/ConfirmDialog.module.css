@@ -1,0 +1,59 @@
+.modal{ background:var(--plum) !important; }
+
+.header{
+  background:var(--plum) !important;
+  border-bottom:1px solid var(--line);
+  padding:20px 24px;
+}
+
+.title{
+  font-family:var(--font-display), serif;
+  font-weight:600;
+  color:var(--parchment);
+  font-size:1.1rem;
+}
+
+.body{ padding:22px 24px 26px; }
+
+.message{
+  color:var(--parchment-dim);
+  font-size:0.94rem;
+  line-height:1.6;
+  margin:0;
+}
+
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:12px;
+  margin-top:26px;
+}
+
+.cancelBtn{
+  font-family:var(--font-mono), monospace;
+  font-size:0.78rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--parchment-dim);
+  padding:12px 18px;
+  border-radius:999px;
+  transition:color .2s;
+}
+
+.cancelBtn:hover{ color:var(--parchment); }
+
+/* Destructive confirm — deliberately clay/red instead of the site's gold
+   CTA color, so "vaciar carrito" never reads as the primary action. */
+.confirmBtn{
+  font-family:var(--font-mono), monospace;
+  font-size:0.78rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  background:var(--clay);
+  color:var(--parchment);
+  padding:12px 22px;
+  border-radius:999px;
+  transition:transform .25s var(--ease);
+}
+
+.confirmBtn:hover{ transform:translateY(-2px); }

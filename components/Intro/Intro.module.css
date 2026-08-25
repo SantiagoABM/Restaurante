@@ -1,0 +1,30 @@
+.intro{ background:var(--ink); padding:150px 0; }
+
+.grid{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 32px;
+  display:grid;
+  grid-template-columns:0.95fr 1.05fr;
+  gap:64px;
+  align-items:center;
+}
+
+.text h2{
+  font-size:clamp(2.1rem, 4vw, 3.4rem);
+  margin:0;
+}
+
+.text p{
+  color:var(--parchment-dim);
+  font-size:1.04rem;
+  line-height:1.75;
+  font-weight:300;
+  margin-top:20px;
+}
+
+.text p + p{ margin-top:14px; }
+
+@media (max-width:56.25em){
+  .grid{ grid-template-columns:1fr; }
+}

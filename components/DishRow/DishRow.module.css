@@ -1,0 +1,44 @@
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+  padding:60px 0;
+  border-top:1px solid var(--line);
+}
+
+.row:first-child{ border-top:none; }
+
+.reverse .visual{ order:2; }
+.reverse .text{ order:1; }
+
+.text .eyebrow{ margin-bottom:10px; }
+
+.text h3{
+  font-family:var(--font-display), serif;
+  font-weight:600;
+  font-size:clamp(1.9rem, 3vw, 2.6rem);
+  margin:0;
+}
+
+.price{
+  color:var(--gold);
+  font-size:1rem;
+  margin-top:10px;
+  display:inline-block;
+  font-family:var(--font-mono), monospace;
+}
+
+.text p{
+  color:var(--parchment-dim);
+  font-size:1rem;
+  line-height:1.7;
+  font-weight:300;
+  margin-top:16px;
+  max-width:440px;
+}
+
+@media (max-width:56.25em){
+  .row{ grid-template-columns:1fr; }
+  .reverse .visual, .reverse .text{ order:initial; }
+}
